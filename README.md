@@ -21,7 +21,29 @@
 
 ## 安装与使用
 
-下载ZIP后解压，保留整个 `organize-randomdance` 文件夹及相对目录。按所使用AI工具的技能安装方式添加该文件夹；安装入口因工具而异，不需要运行安装脚本。本包没有自动执行脚本，也不包含音频主程序。
+### 一句话交给 AI 安装
+
+把下面这句话复制给支持从 GitHub 安装技能、且能操作你指定技能目录的 AI 助手：
+
+> 帮我安装随舞主办skill：https://github.com/hzpopjin/organize-randomdance
+
+这是安装请求，不是所有聊天客户端都支持的一键安装功能。助手应先确认当前工具是否支持技能安装、安装到哪里及所需权限；不能安装时，可以下载本包手动导入，或直接阅读 [SKILL.md](SKILL.md) 使用其中流程。
+
+### 给安装助手的定位说明
+
+- 仓库：`hzpopjin/organize-randomdance`；默认分支：`main`。
+- 技能入口在仓库根目录 `SKILL.md`，技能路径为 `.`，技能名为 `organize-randomdance`。
+- 必须一起保留 `references/`、`assets/templates/`、`agents/`、README 与许可文件，不能只下载入口。
+- 若使用 Codex 的 `install-skill-from-github.py`，参数为 `--repo hzpopjin/organize-randomdance --path . --name organize-randomdance --ref main`。脚本位置由所在工具提供，不属于本仓库；根路径需明确传 `--name`，不能把单独的仓库 URL 直接当成完整 CLI 参数。
+- 已有同名技能时先说明版本差异并确认更新方式，不擅自覆盖。
+
+### 手动安装与完成检查
+
+在 GitHub 的 Code 菜单下载 ZIP，解压后将包含 `SKILL.md` 的目录命名为 `organize-randomdance`，保留完整相对目录，再按你使用的 AI 工具提供的技能导入方式添加。GitHub 下载包外层目录可能带 `-main` 后缀，不要误把仅含另一层文件夹的目录当作技能根目录。
+
+安装后应确认：技能列表或入口能识别“随舞主办”/ `organize-randomdance`；`SKILL.md` 及引用资料可读取；新一轮对话中可用“使用随舞主办技能，帮我确定当前阶段和下一步”进行检查。只有目标工具实际识别后才算安装完成。
+
+已验证本仓库路径解析和 Codex 安装器的本地结构校验，尚未在所有客户端完成实际安装测试。具体客户端可能要求刷新技能列表或重启会话，请以该工具提示为准。本包没有自动执行脚本，也不包含音频主程序。
 
 不支持技能安装的工具也可以阅读入口和引用资料。示例请求：
 
